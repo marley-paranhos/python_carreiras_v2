@@ -27,3 +27,19 @@ def carrega_vagas_db():
 
       # Retorna a lista de dicionários
       return vagas
+
+
+def carrega_vaga_db(id):
+  # Conexão e execução da consulta
+  with engine.connect() as conn:
+      resultado = conn.execute(text(
+        f'SELECT * FROM vagas WHERE id = :val'
+      ),
+        {'val': id}
+      )
+
+      registro = resultado.mappings().all()
+      if len(registro) == 0:
+        return None
+      else:
+        return dict(registro[0])
