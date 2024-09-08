@@ -16,12 +16,16 @@
     <p class="lead">{{vaga.localidade}}</p>
     <h3>Responsabilidades</h3>
     <ul>
-        <li>{{ vaga.resposabilidades }}</li>
+      {% for linha in vaga.responsabilidades.split(".") %}
+        <li>{{ linha }}</li>
+      {% endfor %}
     </ul>
     <h3>Salário</h3>
     <p>{{vaga.moeda}}{{vaga.salario}}</p>
     {% include 'includes/form_inscricao.html' %}
   </div>
+  
+  
   {% include 'includes/footer.html' %}
 </body>
 </html>
