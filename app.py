@@ -26,8 +26,9 @@ def mostra_vaga(id):
 
 @app.route("/vaga/<id>/inscricao", methods=["GET", "POST"])
 def inscricao_vaga(id):
+  vaga = carrega_vaga_db(id)
   data = request.form
-  return jsonify(data)
+  return render_template("inscricao_concluida.html", vaga=vaga, inscricao=data)
 
 
 if __name__ == "__main__":
