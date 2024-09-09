@@ -11,7 +11,7 @@ engine = create_engine(
         'ssl_disabled': False  # Habilita SSL sem especificar um certificado manualmente
     }
 )
-# 
+
 
 def carrega_vagas_db():
   # Conexão e execução da consulta
