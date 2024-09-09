@@ -20,7 +20,7 @@ def lista_vagas():
 def mostra_vaga(id):
   vaga = carrega_vaga_db(id)
   if not vaga:
-    return "Not Found", 404
+    return "Página não encontrada", 404
   return render_template("detalhevaga.html", vaga=vaga)
 
 
